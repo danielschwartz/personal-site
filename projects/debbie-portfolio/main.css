@@ -1,0 +1,251 @@
+/* 
+	Debbie Burkoff Portfolio Main CSS
+	
+	~1. Menu
+	~2. Homepage
+	~3. About
+	~4. Contact
+	~5. Portfolio
+*/
+
+
+/* ~1. Menu */
+
+#menu{float:left;}
+
+#menu a{
+	display:block;
+	text-indent:-99999px;
+	width:150px;
+	border-bottom:2px solid #C176B1;
+	
+}
+
+#menu .header{
+	background:url(images/menu/menu-header.png) no-repeat;
+	height:89px;
+	padding-bottom:5px;
+}
+
+#menu .about{
+	background:url(images/menu/menu-about.png) no-repeat;
+	height:29px;
+	margin-top:3px;
+	padding-bottom:3px;
+}
+
+#menu .about:hover{
+	background:url(images/menu/menu-about-hover.png) no-repeat;
+}
+
+#menu .about:active{
+	background:url(images/menu/menu-about-active.png) no-repeat;
+}
+
+#menu .portfolio{
+	background:url(images/menu/menu-portfolio.png) no-repeat;
+	height:19px;
+	margin-top:2px;
+	padding-bottom:2px;
+}
+
+#menu .portfolio:hover{
+	background:url(images/menu/menu-portfolio-hover.png) no-repeat;
+}
+
+#menu .portfolio:active{
+	background:url(images/menu/menu-portfolio-active.png) no-repeat;
+}
+
+#menu .contact{
+	background:url(images/menu/menu-contact.png) no-repeat;
+	height:24px;
+	margin-top:3px;
+	padding-bottom:3px;
+}
+
+#menu .contact:hover{
+	background:url(images/menu/menu-contact-hover.png) no-repeat;
+}
+
+#menu .contact:active{
+	background:url(images/menu/menu-contact-active.png) no-repeat;
+}
+
+/* ~2. Homepage */
+
+#homepage a{
+	display:block;
+	text-indent:-99999px;
+	width:215px;
+	border-bottom:3px solid #C176B1;
+}
+
+#homepage .hero{
+	margin:215px auto 0;
+	width:216px;
+}
+
+#homepage .header{
+	background:url(images/homepage/homepage-header.png) no-repeat;
+	height:128px;
+	padding-bottom:5px;
+}
+
+#homepage .about{
+	background:url(images/homepage/homepage-about.png) no-repeat;
+	height:42px;
+	margin-top:5px;
+	padding-bottom:5px;
+}
+
+#homepage .about:hover{
+	background:url(images/homepage/homepage-about-hover.png) no-repeat;
+}
+
+#homepage .about:active{
+	background:url(images/homepage/homepage-about-active.png) no-repeat;
+}
+
+#homepage .portfolio{
+	background:url(images/homepage/homepage-portfolio.png) no-repeat;
+	height:27px;
+	margin-top:2px;
+	padding-bottom:2px;
+}
+
+#homepage .portfolio:hover{
+	background:url(images/homepage/homepage-portfolio-hover.png) no-repeat;
+}
+
+#homepage .portfolio:active{
+	background:url(images/homepage/homepage-portfolio-active.png) no-repeat;
+}
+
+#homepage .contact{
+	background:url(images/homepage/homepage-contact.png) no-repeat;
+	height:34px;
+	margin-top:5px;
+	padding-bottom:5px;
+}
+
+#homepage .contact:hover{
+	background:url(images/homepage/homepage-contact-hover.png) no-repeat;
+}
+
+#homepage .contact:active{
+	background:url(images/homepage/homepage-contact-active.png) no-repeat;
+}
+
+/* ~3. About */
+
+#about{float:left;}
+
+#about .hero{
+	margin:214px 0 0 26px;
+}
+
+/* ~4. Contact */
+
+#contact .content{float:left; margin:245px 0 0 26px;}
+
+#contact .content a{
+	display:block;
+	text-indent:-99999px;
+	width:570px;
+	border-bottom:3px solid #C176B1;
+}
+
+#contact .content .email{
+	background:url(images/contact/contact-email.png) no-repeat;
+	height:42px;
+	padding-bottom:5px;
+}
+
+#contact .content .email:hover{
+	background:url(images/contact/contact-email-hover.png) no-repeat;
+}
+
+
+#contact .content .number{
+	background:url(images/contact/contact-number.png) no-repeat;
+	height:52px;
+	margin-top:7px;
+	padding-bottom:7px;
+}
+
+#contact .content .social{
+	height:129px;
+	width:570px;
+	margin-top:6px;
+	padding-bottom:5px;
+	border-bottom:3px solid #C176B1;
+}
+
+#contact .content .social a{
+	float:left;
+	height:128px;
+	border:0;
+}
+
+#contact .content .facebook{
+	background:url(images/contact/contact-facebook.png) no-repeat;
+	width:224px;
+}
+
+#contact .content .facebook:hover{
+	background:url(images/contact/contact-facebook-hover.png) no-repeat;
+}
+
+#contact .content .linkedin{
+	background:url(images/contact/contact-linkedin.png) no-repeat;
+	width:140px;
+	margin:0 10px 0 19px;
+}
+
+#contact .content .linkedin:hover{
+	background:url(images/contact/contact-linkedin-hover.png) no-repeat;
+}
+
+#contact .content .twitter{
+	background:url(images/contact/contact-twitter.png) no-repeat;
+	width:177px;
+}
+
+#contact .content .twitter:hover{
+	background:url(images/contact/contact-twitter-hover.png) no-repeat;
+}
+
+#contact .content .resume{
+	background:url(images/contact/contact-resume.png) no-repeat;
+	height:43px;
+	margin-top:8px;
+	border:0;
+}
+
+#contact .content .resume:hover{
+	background:url(images/contact/contact-resume-hover.png) no-repeat;
+}
+
+/* ~5. Portfolio */
+
+#portfolio .heros{
+	float:left;
+	margin:209px 0 0 26px;
+	width:610px;
+}
+
+#portfolio .heros .hero{
+	margin:0 26px 4px 0;
+}
+
+#portfolio .images{
+	display:none;
+}
+
+
+
+
+
+
+

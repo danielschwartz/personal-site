@@ -1,0 +1,514 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>HUGE Builder</title>
+    </head>
+    <body>
+        
+        <canvas id="game" height="500" width="1200"></canvas>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+        <script src="canvimator.js"></script>
+        
+        <script>
+        (function() {
+            
+            // Startup Canvimator w/ the ID of the canvas in question
+            var canv   = new CANVIMATOR.init('game',{
+                color    : '#FFF',
+                timeout : 15        // you may wanna set the timeout to be browser specific
+            });
+            
+            var H = [
+                canv.addObject({
+                    type    : 'square',
+                    x        : 10,
+                    y        : 10,
+                    side    : 18,
+                }),
+                canv.addObject({
+                    type    : 'square',
+                    x        : 10,
+                    y        : 28,
+                    side    : 18
+                }),
+                canv.addObject({
+                    type    : 'square',
+                    x        : 10,
+                    y        : 46,
+                    side    : 18
+                }),
+				canv.addObject({
+                    type    : 'square',
+                    x        : 10,
+                    y        : 64,
+                    side    : 18
+                }),
+				canv.addObject({
+                    type    : 'square',
+                    x        : 10,
+                    y        : 82,
+                    side    : 18
+                }),
+                canv.addObject({
+                    type    : 'square',
+                    x        : 28,
+                    y        : 46,
+                    side    : 18
+                }),
+				canv.addObject({
+                    type    : 'square',
+                    x        : 46,
+                    y        : 82,
+                    side    : 18
+                }),
+				canv.addObject({
+                    type    : 'square',
+                    x        : 46,
+                    y        : 64,
+                    side    : 18
+                }),
+                canv.addObject({
+                    type    : 'square',
+                    x        : 46,
+                    y        : 46,
+                    side    : 18
+                }),
+                canv.addObject({
+                    type    : 'square',
+                    x        : 46,
+                    y        : 28,
+                    side    : 18
+                }),
+                canv.addObject({
+                    type    : 'square',
+                    x        : 46,
+                    y        : 10,
+                    side    : 18
+                }),
+            ];
+
+			var U = [
+				canv.addObject({
+					type	: 'square',
+					x		: 75,
+					y		: 10,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 75,
+					y		: 28,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 75,
+					y		: 46,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 75,
+					y		: 64,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 75,
+					y		: 82,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 93,
+					y		: 82,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 111,
+					y		: 82,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 111,
+					y		: 64,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 111,
+					y		: 46,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 111,
+					y		: 28,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 111,
+					y		: 10,
+					side	: 18
+				}),
+			];
+			
+			var G = [
+				canv.addObject({
+					type	: 'square',
+					x		: 176,
+					y		: 10,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 158,
+					y		: 10,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 140,
+					y		: 10,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 140,
+					y		: 28,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 140,
+					y		: 46,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 140,
+					y		: 64,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 140,
+					y		: 82,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 158,
+					y		: 82,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 176,
+					y		: 82,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 176,
+					y		: 64,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 176,
+					y		: 46,
+					side	: 18
+				}),
+			];
+            
+
+			var E = [
+				canv.addObject({
+					type	: 'square',
+					x		: 205,
+					y		: 10,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 205,
+					y		: 28,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 205,
+					y		: 46,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 205,
+					y		: 64,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 205,
+					y		: 82,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 223,
+					y		: 10,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 241,
+					y		: 10,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 223,
+					y		: 46,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 241,
+					y		: 46,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 223,
+					y		: 82,
+					side	: 18
+				}),
+				canv.addObject({
+					type	: 'square',
+					x		: 241,
+					y		: 82,
+					side	: 18
+				}),
+			];
+            canv.draw();
+			
+			function animateHUGE(i) {
+				var letters = [H,U,G,E];
+				
+				if (i < letters.length) {
+					var letter = letters[i];
+					function animateLetter(j,letter) {
+						if (j < letter.length) {
+								letter[j].animate({
+			                        color    : '#ED228E'
+			                    },50,function() {
+			                        animateLetter(j+1,letter);
+			                    });
+						} 
+						else {
+							animateHUGE(i+1)
+						}
+					}
+					animateLetter(0,letter);
+				}
+			}
+			animateHUGE(0);
+			//setInterval(spinHUGE, 30);
+			
+			/*/
+			//set clicked to true if you dont want the spinning action to occur when clicking
+			var clicked = true;
+			$("canvas").click(function(){
+				if(clicked == false){
+					setInterval(spinHUGE, 30);
+					clicked = true;
+					
+				}				
+			});
+			
+			//*/
+			
+			$("canvas").click(function(e){
+				e.preventDefault;
+				placeBlock(e, this);			
+			});
+			
+			
+			
+			function placeBlock(e, canvas){
+				var x = e.pageX - canvas.offsetLeft;
+				var y = e.pageY - canvas.offsetTop;
+				//canv.globalOptions.color = randomColor();
+				
+				var newSquare = canv.addObject({
+					type	: 'square',
+					x		: x,
+					y		: y,
+					side	: 18,
+					color	: randomColor()
+				});
+				
+				newSquare.animate({y : canv.canvas.height - 20}, 500 - y);
+				
+			}
+			
+			
+			function randomColor(){
+			   var rgbColor = '';
+			   for ( i = 1; i < 4; i++ ) {
+			      rgbColor +=  Math.floor(Math.random() * (250+1));
+			      if ( i != 3 ) rgbColor += ',';
+			   }
+			   //window.status = rgbColor;
+			   return"rgb("+rgbColor+")";
+			 }
+
+			
+			
+			
+			
+			var degrees = 0.0;
+			function spinHUGE() {
+			  	var canvas = document.getElementById('game');
+			    var ctx = canvas.getContext('2d');
+				
+				ctx.clearRect(0,0,500,800);
+	          	degrees += 0.016;
+
+	          	ctx.save();
+	          	//ctx.translate(350, 150);
+	          	ctx.rotate(degrees);
+				canv.globalOptions.color = '#ED228E';
+	          	canv.draw();
+	          	ctx.restore();
+			}
+			
+			
+			function doKeyDown(evt){
+				var dy = 18;
+				var dx = 18;
+				var animationLength = 20;
+				var canvHeight = canv.canvas.height;
+				var canvWidth = canv.canvas.width;
+				
+				//alert(canvWidth + " x " + canvHeight);
+				
+				
+			  	switch (evt.keyCode) {
+			    	case 38:  /* Up arrow was pressed */
+			  			var letters = [H,U,G,E];
+						for(i in letters){
+							var letter = letters[i];
+							for(k in letter){
+								curY = letter[k].options.y;
+								if(curY - dy > 0)
+									letter[k].animate({y : curY - dy}, animationLength);
+							}
+						}
+						break;
+			    	case 40:  /* Down arrow was pressed */
+				  		var letters = [H,U,G,E];
+						for(i in letters){
+							var letter = letters[i];
+							for(k in letter){
+								curY = letter[k].options.y;
+								if(curY + dy < canvHeight)
+									letter[k].animate({y : curY + dy}, animationLength);
+							}
+						}
+						break;
+				    case 37:  /* Left arrow was pressed */
+				  		var letters = [H,U,G,E];
+						for(i in letters){
+							var letter = letters[i];
+							for(k in letter){
+								curX = letter[k].options.x;
+								if(curX - dx > 0)
+									letter[k].animate({x : curX - dx}, animationLength);
+							}
+						}
+						break;
+				    case 39:  /* Right arrow was pressed */
+						var letters = [H,U,G,E];
+						for(i in letters){
+							var letter = letters[i];
+							for(k in letter){
+								curX = letter[k].options.x;
+								if(curX + dx < canvWidth)
+									letter[k].animate({x : curX + dx}, animationLength);
+							}
+						}
+						break;
+				}
+			}
+			
+			window.addEventListener('keydown',doKeyDown,true);
+			
+			
+			
+			
+			
+			
+			
+			/*
+            function animateH(i) {
+                if (i < H.length) {
+                    H[i].animate({
+                        color    : '#ED228E'
+                    },100,function() {
+                        animateH(i+1);
+                    });
+                } else {
+					animateU(0)
+				}
+            }
+			
+			function animateU(i) {
+				if (i < U.length){
+					U[i].animate({
+                        color    : '#ED228E'
+                    },100,function() {
+                        animateU(i+1);
+                    });
+				}
+			}
+			
+			function animateG(i) {
+				if (i < G.length){
+					G[i].animate({
+                        color    : '#ED228E'
+                    },100,function() {
+                        animateG(i+1);
+                    });
+				}
+			}
+			
+			
+			function animateE(i) {
+				if (i < E.length){
+					E[i].animate({
+                        color    : '#ED228E'
+                    },100,function() {
+                        animateE(i+1);
+                    });
+				}
+			}
+			
+			//animateH(0);
+			//console.log(H.length);
+			
+			//setTimeout(function(){animateU(0)},100 * H.length);
+			//animateU(0);
+			//animateG(0);
+			//animateE(0);
+			
+            //*/
+        
+        })()
+        </script>
+    </body>
+</html>

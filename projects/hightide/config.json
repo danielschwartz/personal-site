@@ -1,0 +1,69 @@
+{
+  "width": 1000,
+  "title": "Status Board",
+  "rotate": "no",
+  "modules": [
+    {
+	  "name": "alert",
+	  "width": 1000,
+	  "update": 5
+	},
+	{
+      "name": "bargraph",
+      "width": 980,
+      "update": 60, 
+      "class": "middle",
+      "args": {
+        "height": 300
+      }
+    },
+    {
+      "name": "grid",
+      "width": 980,
+      "update": 300
+    },
+    {
+      "name": "countdown",
+      "width": 980,
+      "update": 43200, 
+      "args": {
+        "event": "UNTIL THANKSGIVING",
+        "stop": 1290735106,
+        "timezone": "America/New_York"
+      }
+    },
+	{
+		"name": "weather",
+		"class": "mini middle",
+		"width": 980,
+		"height": 150,
+		"update": 3600,
+		"args": {
+			"zipcode": "10002",
+			"airpoty": "KNYC"
+		}
+	},
+    {
+      "name": "space",
+      "width": 300,
+      "update": 0
+    },
+    {
+      "name": "downtown",
+      "width": 480,
+      "update": 60,
+      "class": "mini trains"
+    },
+	{
+      "name": "uptown",
+      "width": 480,
+      "update": 60,
+      "class": "mini trains"
+    },
+    {
+      "name": "meta",
+      "width": 980,
+      "update": 60
+    }	
+  ]
+}

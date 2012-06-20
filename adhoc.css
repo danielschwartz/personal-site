@@ -1,0 +1,235 @@
+/* Site-wide styles — should be in core.css when we finally deprecate base.css many eons from now */
+* {
+	margin: 0;
+	padding: 0
+}
+
+body {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	color: #515151;
+	background-color: #ededed;
+	min-width: 942px;
+	_width: expression((documentElement.clientWidth <942) ? "942px" : "100%" );
+}
+
+a, a:link, a:visited {
+	color: #F78C0D;
+	text-decoration: none;
+	cursor: pointer; /* For when href attr isn't present */
+}
+a:hover {
+	text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 200;
+}
+
+address {
+	font-style: normal;
+}
+
+img {
+	border: none;
+	*-ms-interpolation-mode: bicubic;
+}
+
+abbr {
+	border: none
+}
+
+ul, ol {
+	list-style-type: none;
+}
+
+ins {
+	text-decoration: none;
+}
+
+fieldset {
+	border: none;
+}
+
+option {
+	padding: 0 5px;
+}
+
+q:before, q:after {
+	content: '';
+}
+
+
+.fl {
+	float: left;
+	_display: inline;
+}
+.fr {
+	float: right;
+	_display: inline;
+}
+
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix {
+	*zoom: 1;
+}
+
+.pngfix {
+	_behavior: url(/static/scripts/pngfix/iepngfix.htc);
+}
+
+/* Site layout */
+#page-content {
+	width: 918px;
+	margin: 30px auto;
+}
+#page-content:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+
+#header {
+	background: #000 url(/static/images/layout/black-wave.png) repeat top left;
+	/* for autocomplete dropdown to show up above everything */
+	*position: relative;
+	*z-index: 998;
+}
+
+#header-wrapper {
+	position: relative;
+	margin: 0 auto;
+	width: 918px;
+	height: 74px;
+	padding-top: 18px;
+
+}
+
+/* No navigation, just a byline */
+#header .no-nav {
+	height: 43px;
+}
+
+#header p.byline {
+	margin-top: 10px;
+	*margin-top: 25px;
+	text-align: right;
+	font: italic 14px georgia,serif;
+	color: #777;
+}
+
+#header h1 {
+	float: left;
+	_display: inline;
+}
+
+#header h1 a {
+	background:url(/static/images/layout/header-logo.png) no-repeat;
+	_background-image: url(/static/images/layout/header-logo.gif);
+	display: block;
+	text-indent: -9999px;
+	overflow: hidden;
+	width: 201px;
+	height: 24px;
+}
+
+#footer {
+	background: #121212;
+	color: #7E7E7E;
+	font-size: 12px;
+	height: 140px;
+	clear: both;
+}
+
+#footer a {
+	color: #777777;
+}
+
+#footer a:hover {
+	color:#f78c0c;
+	text-decoration:none;
+}
+
+#footer-inner {
+	width: 918px;
+	margin: 0 auto;
+	padding-top: 15px;
+	overflow: hidden;
+}
+
+
+#footer .logo {
+	float: left;
+	_display: inline;
+	background: url(/static/images/layout/header-logo.png) no-repeat;
+	_background-image: url(/static/images/layout/header-logo.gif);
+	text-indent: -9999px;
+	width: 201px;
+	height: 24px;
+	overflow: hidden;
+}
+
+
+#footer .footer-nav {
+	margin: 11px 0 0 35px;
+}
+
+#footer .footer-nav li {
+	float: left;
+	_display: inline;
+	margin-right: 13px;
+}
+#footer .footer-nav li.last {
+	margin-right: 0;
+}
+
+
+#footer .follow {
+	*width: 135px;
+}
+
+#footer .follow .copy {
+	padding-right: 6px;
+	line-height: 27px;
+	color: #fff;
+}
+
+#footer .follow li {
+	float: left;
+	_display: inline;
+}
+
+#footer .follow a {
+	display: block;
+	height: 27px;
+	width: 27px;
+	background: url(/static/images/layout/site-sprites.png?v4) no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+#footer .follow .facebook {
+	background-position: 0 -200px;
+	margin-right: 2px;
+}
+
+#footer .follow .twitter {
+	background-position: -50px -200px;
+}
+
+#footer .copyright {
+	display: block;
+	clear: left;
+	padding-top: 10px;
+	*padding-top: 0;
+	text-align: center;
+	font-style: normal;
+}

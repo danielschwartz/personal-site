@@ -1,0 +1,87 @@
+@font-face { font-family: NowPlaying; src: url('NowPlaying.otf'); } 
+
+body{
+	font-family:NowPlaying, Arial;
+	background:url("/images/bg.jpeg");
+}
+
+a{
+	color:#FFF;
+	text-decoration:none;
+}
+
+a:visited{
+	color:#FFF;
+	text-decoration:none;
+}
+
+.wrapper{
+}
+
+#menu{
+	width:100%;
+	height:50px;
+	background-color:#000;
+}
+
+#menu li{
+	float:left;
+	width:auto;
+	line-height:50px;
+	padding:0 20px;
+}
+
+#menu li a{
+	color:#BBB;
+	font-size:20px;
+	-webkit-transition: color .3s linear;
+}
+
+#menu li a:hover{
+	color:#FFF;
+	-webkit-transition: color .3s linear;
+}
+
+#menu li.active a{color:#FFF;}
+
+#menu #projects{
+	display:none;
+	height:50px;
+}
+
+#menu #projects .brace{
+	display:block;
+	font-size:40px;
+	color:#FFF;
+	float:left;
+	line-height:57px;
+}
+
+#menu #projects li{
+	float:left;
+}
+
+#menu #projects li a{
+	color:#FFF;
+	font-size:13px;
+}
+
+#menu #projects li a:hover{
+	text-decoration:underline;
+}
+
+.wrapper .content{
+    width:100%;
+    height:100%;
+}
+
+#hero{
+	margin:0 auto;
+	width:206px;
+}
+
+#hero span{
+	font-size:40px;
+	color:#000;
+	text-shadow: 1px 1px 1px #000;
+}

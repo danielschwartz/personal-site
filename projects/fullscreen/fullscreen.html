@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NYTimes Landing</title>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<script src="mmbridge.js" type="text/javascript" charset="utf-8"></script>
+<script src="medialets-dev.js" type="text/javascript" charset="utf-8"></script>
+<script src="medialets.jetGallery.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.2r1/build/reset/reset-min.css">
+<style type="text/css">
+
+*{
+	-webkit-backface-visibility: hidden;
+}
+
+.animating{
+	-webkit-transition: 2s cubic-bezier(.10, .10, .25, .90);
+}
+
+#container{
+  height: 720px;
+  width: 1024px;
+  background: #000;
+  position: absolute;
+  overflow: hidden;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+#gallery{
+  width: 100%;
+  height: 100%;
+  background: #000;
+  position:absolute;
+  overflow:hidden;
+}
+
+#items{
+  position:absolute;
+  top:0;
+  left:0;
+  overflow:hidden;
+  height: 100%;
+  -webkit-transition: 0.6s cubic-bezier(.10, .10, .25, .90);
+}
+
+#items .item{
+  float: left;
+  height: 720px;
+  width: 1024px;
+  position: relative;
+}
+
+.box{
+  width: 296px;
+  height: 276px;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: 0.5s cubic-bezier(.10, .10, .25, .90);
+  bottom: 276px;
+}
+
+.box.logo{
+  background: #000 url(http://jetsetter.com/static/images/layout/black-wave.png) repeat top left;
+  -webkit-transition: 1s cubic-bezier(.10, .10, .25, .90);
+  z-index: 10;
+}
+
+
+.box.logo .header{
+	background: url(http://jetsetter.com/static/images/layout/header-logo.png) no-repeat;
+	width: 201px;
+	height: 24px;
+	margin: 108px auto 0;
+}
+
+.box.logo .hr{
+	margin: 14px auto;
+	width: 31px;
+	height: 1px;
+	background: #383838;
+}
+
+.box.logo .tagline{
+	position: relative;
+	height: 18px;
+	font-size:22px;
+	font-weight: 200;
+}
+
+.box.logo .tagline .bold{
+	position: absolute;
+	bottom: 0;
+	left: 77px;
+	color: #FFF;
+	-webkit-transition: 1s cubic-bezier(.10, .10, .25, .90);
+}
+
+.box.logo .tagline .normal{
+	position: absolute;
+	bottom: 0;
+	left: 144px;
+	color: #999;
+	-webkit-transition: 1s cubic-bezier(.10, .10, .25, .90);
+}
+
+.box.logo .static p{
+	text-align: center;
+	color: #999;
+}
+
+.box.logo .static span{
+	color: #FFF;
+}
+
+.box.image{
+  z-index: 9;
+}
+
+.box.info{
+  background: rgba(0,0,0,0.7);
+  z-index: 8;
+}
+
+.box.info .info-wrap{
+	width: 220px;
+	margin: 0 auto;
+}
+
+.box.info .about{
+	width: 220px;
+	margin-top: 34px;
+	font-family: Georgia;
+	color: #FFF;
+	font-size: 18px;
+	line-height: 21px;
+}
+
+.box.info .hr{
+	height: 1px;
+	width: 31px;
+	background: #383838;
+	margin: 24px 0 11px;
+}
+
+.box.info .location{
+	font-family: Georgia;
+	font-style: italic;
+	font-size: 13px;
+	line-height: 18px;
+	color: #999;
+}
+
+.box.info .action-wrap{
+	position: absolute;
+	bottom: 0;
+	height: 52px;
+	width: 100%;
+}
+
+.box.info .action-wrap p{
+	line-height: 52px;
+	float: left;
+	font-family: Helvetica Neue, Helvetica;
+	font-weight: bold;
+	font-size: 15px;
+	color: #FFF;
+	margin-left: 38px;
+}
+
+.box.info .action-wrap .next{
+	float: right;
+	height: 52px;
+	width: 69px;
+	background: url(images/next-arrow.png) 0 0 no-repeat;
+}
+
+.download{
+	width: 175px;
+	height: 44px;
+	background: url(images/download.png) 0 0 no-repeat;
+	display: block;
+}
+
+.download:active{
+	opacity: 0.7;
+}
+
+.download-small{
+	width: 135px;
+	height: 34px;
+	background: url(images/download-small.png) 0 0 no-repeat;
+	display: block;
+	margin: 25px auto;
+}
+
+.download-small:active{
+	opacity: 0.7;
+}
+
+/* Slide 1 */
+
+#slide1{
+	background: url(images/slide1bg.jpg) 50% 50% no-repeat;
+}
+
+#slide1 .box{
+	left: 0;
+}
+
+#slide1 .box.image{
+	background:url(images/slide1small.jpg) 0 0 no-repeat;
+}
+
+#slide1 .bold.inspired{
+	left: 80px !important;
+}
+
+#slide1 .normal.seclusion{
+	opacity: 0;
+	left: 165px;
+}
+
+#slide1 .download-small{
+	margin: 25px auto 0;
+}
+
+/* Slide 2 */
+
+#slide2{
+	background: url(images/slide2bg.jpg) 50% 50% no-repeat;
+}
+
+#slide2 .box{
+	right: 0;
+	opacity: 1;
+}
+
+#slide2 .box.image{
+	background:url(images/slide2small.jpg) 0 0 no-repeat;
+}
+
+#slide2 .box.logo{
+	bottom: 276px;
+}
+
+#slide2 .box.image{
+	bottom: 0;
+}
+
+#slide2 .box.info{
+	bottom: 0;
+	right: 296px;
+}
+
+/* Slide 3 */
+
+#slide3{
+	background: url(images/slide3bg.jpg) 50% 50% no-repeat;
+}
+
+#slide3 .box{
+	left: 0;
+	opacity: 1;
+}
+
+#slide3 .box.image{
+	background:url(images/slide3small.jpg) 0 0 no-repeat;
+}
+
+#slide3 .box.logo{
+	bottom: 276px;
+}
+
+#slide3 .box.image{
+	bottom: 0;
+}
+
+#slide3 .box.info{
+	bottom: 0;
+	left: 296px;
+}
+
+
+
+
+
+
+
+
+/* Slide 4 */
+
+#slide4{
+	background: url(images/slide4bg.jpg) 50% 50% no-repeat;
+}
+
+#slide4 #rail .header{
+	background: url(http://jetsetter.com/static/images/layout/header-logo.png) no-repeat;
+	width: 201px;
+	height: 24px;
+	margin: 85px auto 0;
+}
+
+#slide4 #rail .hr{
+	margin: 14px auto;
+	width: 31px;
+	height: 1px;
+	background: #383838;
+}
+
+#slide4 #rail .tagline{
+	position: relative;
+	height: 18px;
+	font-size:22px;
+	font-weight: 200;
+}
+
+#slide4 #rail .tagline p{
+	text-align: center;
+	color: #999;
+}
+
+#slide4 #rail .tagline span{
+	color: #FFF;
+}
+
+#slide4 #rail .inspiration{
+	text-align: center;
+	color: #FFF;
+	font-size: 25px;
+	font-family: Helvetica;
+	line-height: 30px;
+	font-weight: 200;
+	width: 205px;
+	margin: 0 auto;
+}
+
+#slide4 #rail .inspiration span{
+	font-size: 25px;
+	font-weight: 200;
+	color: #F78C0D;	
+}
+
+#slide4 #rail .info{
+	font-family: Georgia;
+	color: #FFF;
+	font-size: 14px;
+	width: 196px;
+	margin: 20px auto 40px;
+	text-align: center;
+	line-height: 18px;
+}
+
+#slide4 #rail .download{
+	margin: 0 auto;
+}
+
+#slide4 #rail .ipad{
+	position: absolute;
+	bottom: 0;
+	left: 58px;
+	width:195px;
+	height: 167px;
+	background: url(images/ipad.png) 0 0 no-repeat;
+}
+
+#slide4 .action-wrap-back p{
+	line-height: 52px;
+	float: right;
+	font-family: Helvetica Neue, Helvetica;
+	font-weight: bold;
+	font-size: 15px;
+	color: #7C7A79;
+	background: rgba(0,0,0,0.7);
+	width: 98px;
+	text-align: center;
+}
+
+#slide4 .action-wrap-back .prev{
+	float: left;
+	height: 52px;
+	width: 69px;
+	background: url(images/prev-arrow.png) 0 0 no-repeat;
+}
+
+
+@media screen and (orientation:landscape){
+  #container{
+	height: 720px;
+	width: 1024px;
+  }
+
+  #items .item{
+	height: 720px;
+	width: 1024px;
+  }
+
+
+  #slide3{
+	-webkit-transition: 1s cubic-bezier(.10, .10, .25, .90);
+  }
+
+  #slide4 #rail .inspiration{
+  	margin-top: 80px;
+  }
+
+  #slide4 #rail{
+	width: 293px;
+	height: 100%;
+	background: url(images/slide4rail-landscape.jpg) 0 0 no-repeat;
+	position: absolute;
+	right: 0;
+	top: 0;
+  }
+
+  #slide4 .action-wrap-back{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 52px;
+	width: 167px;
+  }
+
+}
+
+ 
+/* Landscape */
+@media screen and (orientation:portrait){
+  #container{
+	height: 975px;
+	width: 768px;
+  }
+
+  #items .item{
+	height: 975px;
+	width: 768px;
+  }
+
+
+  #slide3{
+	-webkit-transition: 1s cubic-bezier(.10, .10, .25, .90);
+  }
+
+  #slide4 #rail .inspiration{
+  	margin-top: 195px;
+  }
+
+  #slide4 #rail{
+	width: 296px;
+	height: 100%;
+	background: url(images/slide4rail-portrait.jpg) 0 0 no-repeat;
+	position: absolute;
+	right: 0;
+	top: 0;
+  }
+
+  #slide4 .action-wrap-back{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 52px;
+	width: 167px;
+  }
+
+  #slide4 #rail .inspiration{
+  	margin-top: 195px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+  
+  <div id="container">
+	  <div id="gallery">
+		<div id="items">
+
+		  <div class="item" id="slide1">
+			<div class="box logo">
+				<div class="header"></div>
+				<div class="hr"></div>
+				<div class="tagline">
+					<p class="bold">Travel</p>
+					<p class="normal">Inspired</p>
+					<p class="normal seclusion">Style</p>
+				</div>
+				<a class="download-small"></a>	
+			</div>
+			<div class="box image"></div>
+			<div class="box info">
+				<div class="info-wrap">
+					<p class="about">Low-lit bars, indie boutiques, and a daring design hotel. Go<br/> downtown the Jetset way.</p>
+					<div class="hr"></div>
+					<p class="location">
+						The Hotel on Rivington,<br/>
+						New York City
+					</p>
+				</div>
+				<div class="action-wrap">
+					<p>Next Inspiration</p>
+					<div class="next"></div>
+				</div>
+			</div>
+		  </div>
+
+
+		  <div class="item" id="slide2">
+			<div class="box logo">
+				<div class="header"></div>
+				<div class="hr"></div>
+				<div class="tagline static">
+					<p><span>Inspired</span> Romance</p>
+				</div>
+				<a class="download-small"></a>
+			</div>
+			<div class="box image"></div>
+			<div class="box info">
+				<div class="info-wrap">
+					<p class="about">Two-story treehouse-style villas overlooking the Caribbean. Unplug the Jetset way.</p>
+					<div class="hr"></div>
+					<p class="location">
+						Ladera Resort,<br/>
+						St. Lucia
+					</p>
+				</div>
+				<div class="action-wrap">
+					<p>Next Inspiration</p>
+					<div class="next"></div>
+				</div>
+			</div>
+		  </div>
+		  
+		  <div class="item" id="slide3">
+		  	<div class="box logo">
+				<div class="header"></div>
+				<div class="hr"></div>
+				<div class="tagline static">
+					<p><span>Inspired</span> Tradition</p>
+				</div>
+				<a class="download-small"></a>
+			</div>
+			<div class="box image"></div>
+			<div class="box info">
+				<div class="info-wrap">
+					<p class="about">Bagpipes and tartan...<br/>and the world's most famous golf course. Play a legend, the Jetset way.</p>
+					<div class="hr"></div>
+					<p class="location">
+						The Old Course Hotel,<br/>
+						St. Andrews, Scotland
+					</p>
+				</div>
+				<div class="action-wrap pan">
+					<p>Next Inspiration</p>
+					<div class="next"></div>
+				</div>
+			</div>
+		  </div>
+
+		  <div class="item" id="slide4">
+			<div id="rail">
+				<div class="header"></div>
+				<div class="hr"></div>
+				<div class="tagline">
+					<p><span>Travel</span> Inspired</p>
+				</div>
+				<p class="inspiration">Get <span>$50</span> off your first trip when you book on your iPad</p>
+				<p class="info">Insider tips, firsthand reviews, 360 degree photographs, and up to 50% off the world's greatest vacations. All without being tied to your desktop.</p>
+				<a class="download"></a>
+				<div class="ipad"></div>
+			</div>
+
+			<div class="action-wrap-back">
+				<p>Back</p>
+				<div class="prev"></div>
+			</div>
+		  </div>
+
+		
+
+
+		</div>
+	  </div>
+  </div>
+  
+  <script type="text/javascript" charset="utf-8">
+	
+	document.addEventListener('DOMContentLoaded', function() {
+		var jetGallery = new $m.jetGallery();
+		
+
+	  	$m.jsonp({
+	  		url: 'http://www.jetsetter.com/tracker.php',
+	  		params: {
+	  			eventType: 'iPadViewFullscreen'	
+	  		}
+	  	});
+	  
+	}, false);
+
+	$m.bind($m.find('.download-small'), $m.ui.tap, function(e){
+		$m.jsonp({
+	  		url: 'http://www.jetsetter.com/tracker.php',
+	  		params: {
+	  			eventType: 'iPadFullScreenSmallDownload'	
+	  		}
+	  	});
+		document.location = "http://itunes.apple.com/us/app/jetsetter-for-ipad/id416813861";
+	});
+
+	$m.bind($m.find('.download'), $m.ui.tap, function(e){
+		$m.jsonp({
+	  		url: 'http://www.jetsetter.com/tracker.php',
+	  		params: {
+	  			eventType: 'iPadFullScreenLargeDownload'	
+	  		}
+	  	});
+		document.location = "http://itunes.apple.com/us/app/jetsetter-for-ipad/id416813861";
+	});
+	
+	// prevent scrolling in the ad
+	document.addEventListener("touchmove", function(e){e.preventDefault();}, false);
+	
+  </script>
+
+</body>
+</html>

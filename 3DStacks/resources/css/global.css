@@ -1,0 +1,14 @@
+body {
+	font-family: Monospace;
+	background-color: #FFF;
+	margin: 0px;
+	overflow: hidden;
+}
+
+.new-user{
+	font-family:Helvetica, Arial;
+	font-size:30px;
+	position:absolute;
+	top:200px;
+	left:400px;
+}

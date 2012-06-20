@@ -1,0 +1,1 @@
+$('.popup').datepick({dateFormat: 'yyyy-mm-dd'});

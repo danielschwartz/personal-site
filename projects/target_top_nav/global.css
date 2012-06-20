@@ -1,0 +1,335 @@
+/* CSS Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+body {
+	line-height: 1;
+	color: #FFF;
+	background: white;
+	font-family:Helvetica,Arial;
+	font-weight:bold;
+}
+ol, ul {
+	list-style: none;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	text-align: left;
+	font-weight: normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+
+/* new clearfix */
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+
+/* Target Styles */
+
+body{background:url(img/bodybg.png) repeat-x;}
+
+a{cursor:pointer;}
+
+.container{
+	width:1150px;
+	margin:0 auto;
+}
+
+#nav{
+	height:114px;
+	width:100%;
+	background:url(img/nav-bg.png) repeat-x;
+}
+
+#nav .user{float:right; margin:15px 70px 0 0;}
+
+#nav .user li{
+	float:left;
+	font-size:11px;
+	padding:0px 10px;
+}
+
+#nav .user li a:hover{text-decoration:underline;}
+
+#nav .categories{
+	padding:30px 0 0 100px;
+}
+
+#nav .categories .spot{float:left;}
+#nav .categories .menus{float:left;}	
+
+#nav .main .nav-vr{
+	border-right:1px solid #A80015;
+	height:10px;
+	width:1px;
+	float:left;
+	margin-top:16px;
+}
+
+#nav .menus .main li{
+	float:left;
+	text-indent:-9999px;
+	padding:0px 10px;
+	height:36px;
+}
+
+#nav .menus .main li a{display:block; background-image:url(img/topnav2.png);}
+
+#nav .categories li.active{-webkit-box-shadow: 0px 0px 10px #CCC; -moz-box-shadow: 0px 0px 10px #CCC; background:#FFF;}
+
+#nav .main .women a{
+	background-position:0 -5px;
+	width:85px;
+	height:17px;
+	margin-top:12px;
+}
+#nav .main .women.active a{background-position:0 -116px;}
+
+#nav .main .men a{
+	background-position:-103px -5px;
+	width:52px;
+	height:17px;
+	margin-top:12px;
+}
+#nav .main .men.active a{background-position:-103px -116px;}
+
+
+#nav .main .baby a{
+	background-position:-173px 0px;
+	width:59px;
+	height:27px;
+	margin-top:7px;
+}
+#nav .main .baby.active a{background-position:-173px -111px;}
+
+
+#nav .main .kids a{
+	background-position:-250px 0px;
+	width:49px;
+	height:22px;
+	margin-top:7px;
+}
+#nav .main .kids.active a{background-position:-250px -111px;}
+
+
+#nav .main .home a{
+	background-position:-316px 0px;
+	width:67px;
+	height:22px;
+	margin-top:7px;
+}
+#nav .main .home.active a{background-position:-316px -111px;}
+
+
+#nav .main .christmas a{
+	background-position:-402px 0px;
+	width:114px;
+	height:22px;
+	margin-top:7px;
+}
+#nav .main .christmas.active a{background-position:-402px -111px;}
+
+#nav .menus .sub{overflow:hidden;}
+
+#nav .menus .sub li{
+	float:left;
+	text-indent:-9999px;
+	height:33px;
+	padding:0px 7px;
+}
+#nav .menus .sub li:first-child{padding-left:10px;}
+#nav .menus .sub li a{background-image:url(img/subnav2.png); display:block;}
+
+#nav .sub .electronics a{
+	background-position:0 -1px;
+	width:75px;
+	height:14px;
+	margin-top:8px;
+}
+#nav .sub .electronics.active a{background-position:0px -41px;} 
+
+#nav .sub .toys a{
+	background-position:-86px -1px;
+	width:30px;
+	height:17px;
+	margin-top:8px;
+}
+#nav .sub .toys.active a{background-position:-86px -41px;} 
+
+#nav .sub .grocery a{
+	background-position:-127px -3px;
+	width:54px;
+	height:15px;
+	margin-top:10px;
+}
+#nav .sub .grocery.active a{background-position:-127px -43px;} 
+
+#nav .sub .health a{
+	background-position:-191px 0;
+	width:44px;
+	height:16px;
+	margin-top:7px;
+}
+#nav .sub .health.active a{background-position:-191px -40px;} 
+
+#nav .sub .furniture a{
+	background-position:-245px 0;
+	width:59px;
+	height:15px;
+	margin-top:7px;
+}
+#nav .sub .furniture.active a{background-position:-245px -40px;} 
+
+#nav .sub .bed a{
+	background-position:-315px -1px;
+	width:73px;
+	height:15px;
+	margin-top:8px;
+}
+#nav .sub .bed.active a{background-position:-315px -41px;} 
+
+
+#nav .sub .kitchen a{
+	background-position:-399px -1px;
+	width:107px;
+	height:16px;
+	margin-top:8px;
+}
+#nav .sub .kitchen.active a{background-position:-399px -41px;} 
+
+
+#nav .sub .more a{
+	background-position:-517px -3px;
+	width:47px;
+	height:12px;
+	margin-top:10px;
+}
+#nav .sub .more.active a{background-position:-517px -43px;} 
+
+
+#nav .search{float:left; margin:4px 0 0 5px;}
+
+#overlay{
+	background:#FFF;
+	position:absolute;
+	-webkit-box-shadow: 0px 8px 10px #CCC;
+	-moz-box-shadow: 0px 8px 10px #CCC;
+	display:none;
+}
+
+#overlay .wrapper{
+	display:none;
+	padding-top:20px;
+	padding-left:10px;
+	height:188px;
+}
+
+#overlay ul.categories{
+	float:left;
+	color:#0099ff;
+	font-weight:normal;
+	font-size:12px;
+	margin-right:30px;
+}
+#overlay ul.categories.last{margin-right:0px; width:100px;}
+
+
+#overlay ul.categories li{margin-bottom:10px;}
+#overlay ul.categories li:last-child{
+	margin-bottom:0px;
+}
+
+#overlay ul.categories li.last-real{
+	padding-bottom:20px;
+	border-bottom:1px dotted #CCC;
+}
+
+#overlay ul.categories li.black{
+	color:#000;
+	font-weight:bold;
+}
+#overlay ul.categories li.black.first{padding-top:1px;}
+
+
+#overlay ul.categories li a:hover{text-decoration:underline;}
+
+#overlay .baby img{
+	float:left;
+	margin-left:-10px;
+}
+
+/* overlays */
+
+/* main nav */
+
+#overlay .baby{width:400px;}
+#overlay .women{width:210px;}
+#overlay .men{width:140px; padding-bottom:20px;}
+#overlay .kids{width:250px; height:160px;}
+#overlay .home{width:300px; padding-bottom:20px;}
+#overlay .home ul.last{width:auto;}
+
+/* sub nav */
+
+#overlay .electronics{width:300px;}
+#overlay .toys{width:280px; height:210px;}
+#overlay .grocery{width:135px; height:210px;}
+#overlay .health{width:135px; height:210px;}
+#overlay .furniture{width:245px; height:170px;}
+#overlay .bed{width:135px; height:210px;}
+#overlay .kitchen{width:245px; height:170px;}
+#overlay .more{width:300px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
